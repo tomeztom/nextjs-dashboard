@@ -110,6 +110,8 @@ export async function updateInvoice(
 }
 
 export async function deleteInvoice(id: string) {
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+  
   await sql`DELETE FROM invoices WHERE id = ${id}`;
   revalidatePath('/dashboard/invoices');
 }
