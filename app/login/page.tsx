@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   title: 'Login',
 };
 
-export default function LoginPage({
-  searchParams,
-}: {
+type LoginPageProps = {
   searchParams?: {
     callbackUrl?: string;
   };
-}) {
+};
+
+export default function LoginPage({ searchParams }: LoginPageProps) {
   const redirectTo = searchParams?.callbackUrl || '/dashboard';
 
   return (
